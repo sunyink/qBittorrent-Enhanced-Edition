@@ -136,7 +136,12 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
             : QString {};
     };
 
-    const QString variant = buildVariant();
+#ifdef Q_OS_MACOS
+    const QString OS_TYPE = u"Mac OS X"_s;
+#elif defined(Q_OS_WIN)
+    const QString OS_TYPE = u"Windows x64"_s;
+#endif
+
     bool inItem = false;
     QString version;
     QString content;
@@ -168,7 +173,7 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
         {
             if (inItem && (xml.name() == u"item"))
             {
-                if (type.compare(variant, Qt::CaseInsensitive) == 0)
+                if (type.compare(OS_TYPE, Qt::CaseInsensitive) == 0)
                 {
                     qDebug("The last update available is %s", qUtf8Printable(version));
                     if (!version.isEmpty())

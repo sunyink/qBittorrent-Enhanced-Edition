@@ -25,7 +25,7 @@
 ; 4.5.1.3 -> good
 ; 4.5.1.3.2 -> bad
 ; 4.5.0beta -> bad
-!define /ifndef QBT_VERSION "4.6.7.10"
+!define /ifndef QBT_VERSION "3.9.4"
 
 ; Option that controls the installer's window name
 ; If set, its value will be used like this:
@@ -110,7 +110,7 @@ Name "qBittorrent Enhanced ${QBT_INSTALLER_WINDOWNAME}"
 OutFile "qbittorrent_enhanced_${QBT_INSTALLER_FILENAME}_setup.exe"
 
 ;Installer Version Information
-VIAddVersionKey "ProductName" "qBittorrent Enhanced"
+VIAddVersionKey "ProductName" "qBittorrent"
 VIAddVersionKey "CompanyName" "The qBittorrent Enhanced project"
 VIAddVersionKey "LegalCopyright" "Copyright ©2006-2024 The qBittorrent project"
 VIAddVersionKey "FileDescription" "qBittorrent Enhanced - A Enhanced Bittorrent Client"
